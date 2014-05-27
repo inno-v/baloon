@@ -1,4 +1,7 @@
 // USGAE:
+//
+// baloon.check();    // request permission: !!! Must be a user action callback, like click
+// baloon.autocheck();    // request permission on first click anywhere on the document
 // 
 // var notification = baloon({
 //     title: "Title",
@@ -10,7 +13,8 @@
 //     },
 //     cancel: function () {    // optional
 //         // do something on close, unless clicked on (excluding X button)
-//     }
+//     },
+//     timer: 5000 // optional: ms to auto close
 // });
 // 
 // CLOSE:
