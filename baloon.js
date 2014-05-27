@@ -56,6 +56,12 @@ var baloon = (function __baloon__ () {
                     notification = window.webkitNotifications.createNotification(options.image,
                             options.title,
                             options.message);
+                    
+                    if (typeof options.timer === "number") {
+                        notification.onshow = function () { 
+                            setTimeout(notification.cancel, options.timer); 
+                        };
+                    }
 
                     notification.onclick = function (evt) {
                         window.focus();
