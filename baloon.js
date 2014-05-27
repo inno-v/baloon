@@ -1,3 +1,26 @@
+// USGAE:
+// 
+// var notification = baloon({
+//     title: "Title",
+//     message: "Some Message",    // optional
+//     image: "Image URL",    // optional
+//     tag: "unique identifier",    // optional: prevent duplicates
+//     callback: function () {    // optional
+//         // do something on click
+//     },
+//     cancel: function () {    // optional
+//         // do something on close, unless clicked on (excluding X button)
+//     }
+// });
+// 
+// CLOSE:
+// 
+// if (typeof notification.cancal === "function") {
+//     notification.cancal();
+// } else if (typeof notification.close === "function") {
+//     notification.close();
+// }
+
 var baloon = (function __baloon__ () {
     var exports,
         askPermission,
@@ -161,6 +184,7 @@ var baloon = (function __baloon__ () {
             };
 
             break;
+        case null:
         default:
             exports = function baloon () {
                 return null;
@@ -170,7 +194,6 @@ var baloon = (function __baloon__ () {
             return exports;
             break;
     }
-
 
     return exports;
 }());
